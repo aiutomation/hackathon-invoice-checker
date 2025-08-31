@@ -1,0 +1,17 @@
+/* create-pdf.css */
+:root {
+  --pdf-green: #2da44e;
+  --pdf-amber: #fb8500;
+  --pdf-red: #da3633;
+  --pdf-gray: #f6f8fa;
+  --pdf-blue-bg: #f0f9ff;
+}
+
+.pdf-badge-mandatory {
+  color: var(--pdf-green);
+  font-weight: 600;
+}
+.pdf-badge-additional {
+  color: #0969da;
+  font-weight: 500;
+}

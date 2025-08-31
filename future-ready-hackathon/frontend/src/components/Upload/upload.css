@@ -1,0 +1,302 @@
+.upload{ margin-top: 32px; }
+
+.dropzone{
+    border: 2px dashed #cbd5e1;
+    border-radius: 12px;
+    padding: 28px;
+    background: #f8fafc;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color .2s ease, background .2s ease;
+}
+.dropzone.dragging{ border-color: #ff5a3c; background: #fff7f5; }
+.dropzone-inner .icon{ font-size: 28px; }
+.dropzone-inner .title{ font-weight: 700; margin-top: 6px; }
+.dropzone-inner .subtitle{ color: #64748b; font-size: 14px; }
+
+.file-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 0;
+}
+.file-name{ font-weight: 600; }
+.file-meta{ color: #64748b; font-size: 12px; }
+
+/* Shared primary button used also in navbar */
+.primary-btn{
+    background: #ff5a3c;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 999px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .05s ease, box-shadow .2s ease, background .2s ease;
+    /* box-shadow: 0 6px 14px rgba(255,90,60,0.25); */
+}
+.primary-btn:hover{ background:#ff704f; }
+.primary-btn:active{ transform: translateY(1px); }
+.primary-btn:disabled{ opacity:.6; cursor:not-allowed; box-shadow:none; }
+
+/* Multi-file list UI */
+.file-list{ display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+.file-item{ display:flex; align-items:center; justify-content: space-between; padding:10px 12px; border:1px solid #e5e7eb; border-radius:10px; background:#fff; }
+.remove-btn{ background:none; border:1px solid #e5e7eb; color:#ef4444; border-radius:999px; padding:6px 10px; cursor:pointer; }
+.remove-btn:hover{ background:#fef2f2; border-color:#fecaca; }
+.confirm-row{ display:flex; align-items:center; justify-content: space-between; gap:12px; margin-top:12px; }
+.confirm-label{ display:flex; align-items:center; gap:8px; color:#334155; font-size:14px; }
+.actions-row{ display:flex; align-items:center; gap:10px; }
+.clear-btn{ color:#64748b; }
+
+.progress{ position: relative; height: 10px; background: #e2e8f0; border-radius: 999px; margin-top: 10px; }
+.progress .bar{ height: 100%; background: #ff5a3c; border-radius: 999px; transition: width .2s ease; }
+.progress .percent{ text-align: right; font-size: 12px; color: #64748b; margin-top: 6px; }
+
+/* Subtle animated shimmer when uploading */
+.progress.uploading .bar{
+    background: linear-gradient(90deg, #ff5a3c, #ff7a60, #ff5a3c);
+    background-size: 200% 100%;
+    animation: shimmer 1s linear infinite;
+}
+@keyframes shimmer{
+    0% { background-position: 0% 0; }
+    100% { background-position: 200% 0; }
+}
+
+.status{ margin-top: 10px; padding: 12px 14px; border-radius: 8px; font-weight: 600; }
+.status.success{ background: #ecfdf5; color: #065f46; }
+.status.error{ background: #fef2f2; color: #991b1b; }
+
+.status {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 16px;
+    font-size: 14px;
+}
+
+.status.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.status.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.parsed-results {
+    margin-top: 24px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: white;
+}
+
+.tabs {
+    display: flex;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tab {
+    flex: 1;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.tab:hover {
+    background-color: #e9ecef;
+}
+
+.tab.active {
+    background-color: white;
+    color: #007bff;
+    border-bottom-color: #007bff;
+}
+
+.tab-content {
+    padding: 24px;
+    min-height: 300px;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+/* Summary Tab Styles */
+.summary-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.stat-card {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stat-card h4 {
+    margin: 0 0 8px 0;
+    color: #6c757d;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-card p {
+    margin: 0;
+    color: #212529;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Text Tab Styles */
+.text-content {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.extracted-text {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+    color: #333;
+}
+
+/* Markdown Tab Styles */
+.markdown-pages {
+    appearance: 24px;
+}
+
+.markdown-page {
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.markdown-page:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.markdown-page h4 {
+    color: #495057;
+    margin: 0 0 16px 0;
+    padding: 8px 12px;
+    background: #e9ecef;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.parsed-results,
+.markdown-pages,
+.markdown-page {}
+.markdown-content.has-table {
+    overflow-x: auto;
+}
+
+/* Markdown table styling */
+.md-table { width: 100%; border-collapse: collapse; background: #fff; }
+.md-thead th { background: #f1f5f9; }
+.md-th, .md-td { border: 1px solid #e5e7eb; padding: 8px 10px; text-align: left; }
+.md-tr:nth-child(even) .md-td { background: #fafafa; }
+
+/* Structured Data Tab Styles */
+.structured-data {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.json-content {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0;
+    color: #333;
+    background: white;
+    padding: 16px;
+    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tabs {
+        flex-direction: column;
+    }
+    
+    .tab {
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .tab.active {
+        border-bottom-color: #007bff;
+        border-right-color: transparent;
+    }
+    
+    .summary-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .tab-content {
+        padding: 16px;
+    }
+}
+
+/* Scrollbar Styling */
+.tab-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.tab-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.tab-content::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Ensure markdown lists are left-aligned regardless of ancestor alignment */
+.markdown-content .md-ul,
+.markdown-content .md-ol {
+    text-align: left !important;
+    margin-left: 1.25rem;
+    padding-left: 1.25rem;
+}
+.markdown-content .md-li { text-align: left !important; }
+
+/* Restore bullets and numbering for markdown lists */
+.markdown-content .md-ul { list-style: disc outside !important; }
+.markdown-content .md-ol { list-style: decimal outside !important; }
+.markdown-content .md-li { display: list-item; }
+/* Nested list styles */
+.markdown-content .md-ul .md-ul { list-style-type: circle !important; }
+.markdown-content .md-ul .md-ul .md-ul { list-style-type: square !important; }
+
